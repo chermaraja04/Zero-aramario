@@ -4,7 +4,7 @@ import SideNavWithRoutingWidget from "../../../widgets/sideNavWithRoutingWidget/
 import { Col, Container, Row } from "react-bootstrap";
 // import { Col, Row, Form, Button, Container } from "react-bootstrap";
 // import AccountInformation from "../Accountinformation/Accountinformation";
-
+import { useNavigate  } from "react-router-dom";
 import './style.scss';
 
 import AccountInformation from "../Accountinformation/Accountinformation";
@@ -12,6 +12,9 @@ import ChangePassword from "../ChangePassword/ChangePassword";
 import Myorders from "../Myorders/Myorders";
 
 const PersonalAccount=()=>{
+
+    const navigate = useNavigate();
+    const [currIndex, setCurrIndex] = useState(0);
 
     let menuItems = [
         {
@@ -36,9 +39,15 @@ const PersonalAccount=()=>{
         }
     ]
 
-    const [currIndex, setCurrIndex] = useState(0);
+  
     const currentTab = (index) => {
         setCurrIndex(index)
+
+        
+
+        if(index===3){
+            navigate('/help-center')
+        }
     }
     return (
         <Container  className="pt-5 account-information-container">
@@ -50,11 +59,11 @@ const PersonalAccount=()=>{
 
                 <h6 className="logout-link">Log out</h6>
             </Col>
-            <Col xxl={7} xl={7} lg={7} md={12} sm={12} xs={12}>
+            <>
              {currIndex === 0  && <AccountInformation/>} 
              {currIndex === 1 && <ChangePassword/>} 
              {currIndex === 2 && <Myorders/>} 
-            </Col>
+            </>
         </Row>
     </Container>
     )

@@ -21,43 +21,7 @@ export default function ReturnPolicy() {
     const [showReturn, setShowReturn] = useState(false);
 
 
-    let menuItems = [
-        {
-            title: 'Our return / Exchange Form',
-            url: "/return-policy",
-            id: "1"
-        },
-        {
-            title: 'Refunds Form',
-            url: "/refund-form",
-            id: "2"
-        },
-        {
-            title: 'Track my order / return',
-            url: "/track-my-order",
-            id: "3"
-        },
-        {
-            title: 'Feedback',
-            url: "/feed-back",
-            id: "4"
-        },
-        {
-            title: 'FAQ - Customers',
-            url: "/faq-customers",
-            id: "5"
-        },
-        {
-            title: 'About us',
-            url: "/about-us",
-            id: "6"
-        },
-        {
-            title: 'Careers',
-            url: "/",
-            id: "7"
-        }
-    ]
+
 
     function onClickStartRetunr() {
         setShowReturnPolicy(false);
@@ -79,26 +43,11 @@ export default function ReturnPolicy() {
     }
 
     return (
-        <section>
-            {showMobileSwitch ? (
-                <MobileSwitchWidget menuData={menuItems} />
-            ) : ( <Container fluid="md | sm | xs" className="pt-5 return-policy-container">
-            <Row className="align-items-center">
-                <Col>
-                    <p className="mb-0">Home <span className="fw-bold-x">/ Help Center</span></p>
-                </Col>
-                <Col className="text-center switch-block">
-                    <Button className="switch-btn" variant="primary" type="button" onClick={() => onClickSwitch()}>
-                        <FaExchangeAlt /> Switch
-                    </Button>
-                </Col>
-            </Row>
-            <Row className="mt-5">
-                <Col xxl={3} xl={3} lg={4}>
-                    <h2 className="text-uppercase mb30 desktop-title-left">Help Center</h2>
-                    <SideNavWithRoutingWidget menuData={menuItems} />
-                </Col>
-                {showReturnPolicy ? (<Col xxl={5} xl={4} lg={8} md={12} sm={12} xs={12}>
+      
+        <>
+          
+               
+              <Col xxl={5} xl={4} lg={8} md={12} sm={12} xs={12}>
                     <section>
                         <h4 className="fw-bold-x mb30">OUR RETURN POLICY AND PROCESS</h4>
                         <p className="fw-bold-x">Quickly and easily return your item(s) through our Returns Portal! Return portal is open to all Indian customers.</p>
@@ -196,7 +145,7 @@ export default function ReturnPolicy() {
                             </Col>
                         </Row>
                     </section>
-                </Col>) : ""}
+                </Col>
                 {showReturnExchange ? (<Col xxl={7} xl={6} lg={8} md={12} sm={12} xs={12}>
                     <section>
                         <Row className="radio-block mt-5">
@@ -291,14 +240,8 @@ export default function ReturnPolicy() {
                             ) : ""}
                         </Row>
                     </section>
-                </Col>) : ""}
-            </Row>
-        </Container>)}
-
-
-           
-            <Footer />
-        </section>
+                </Col>) : ""}   
+      </>
 
     );
 }

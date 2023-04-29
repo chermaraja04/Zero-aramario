@@ -1,6 +1,6 @@
 import React from "react";
 import "./ChangePassword.scss";
-import { Form, Button } from "react-bootstrap";
+import { Form, Button,Col } from "react-bootstrap";
 
 
 
@@ -8,7 +8,7 @@ export default function ChangePassword() {
 
     return (
 
-        <>
+        <Col xxl={7} xl={7} lg={7} md={12} sm={12} xs={12}>
             <h4 className="fw-bold-x mb30">Create new password</h4>
 
             <Form className="global-form-container w-50">
@@ -26,7 +26,7 @@ export default function ChangePassword() {
                     Save
                 </Button>
             </Form>
-        </>
+        </Col>
 
     )
 }

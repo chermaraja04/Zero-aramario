@@ -4,7 +4,7 @@ import './footer.css'
 function Footer() {
   return (
     <>
-      <footer id="footer-web" className="footer-bs py-3 py-md-5">
+      <footer id="footer-web" className="footer-bs py-3 py-md-5 mt-5">
         <div className="container-custom container">
           <div className="row">
             <div className="col-lg-3 col-xs-6 col-sm-6 col-md-3 pl-3 footer-social animated fadeInDown">

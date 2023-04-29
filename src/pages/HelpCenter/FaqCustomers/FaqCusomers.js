@@ -13,62 +13,9 @@ import { FaExchangeAlt } from "react-icons/fa";
 
 export default function FaqCustomers() {
 
-    let menuItems = [
-        {
-            title: 'Our return / Exchange Form',
-            url: "/return-policy",
-            id: "1"
-        },
-        {
-            title: 'Refunds Form',
-            url: "/refund-form",
-            id: "2"
-        },
-        {
-            title: 'Track my order / return',
-            url: "/track-my-order",
-            id: "3"
-        },
-        {
-            title: 'Feedback',
-            url: "/feed-back",
-            id: "4"
-        },
-        {
-            title: 'FAQ - Customers',
-            url: "/faq-customers",
-            id: "5"
-        },
-        {
-            title: 'About us',
-            url: "/about-us",
-            id: "6"
-        },
-        {
-            title: 'Careers',
-            url: "/",
-            id: "7"
-        }
-    ]
-
     return (
-        <section>
-            <Container fluid="md | sm | xs" className="pt-5 return-policy-container">
-                <Row className="align-items-center">
-                    <Col>
-                        <p className="mb-0">Home <span className="fw-bold-x">/ Help Center</span></p>
-                    </Col>
-                    <Col className="text-center switch-block">
-                        <Button className="switch-btn" variant="primary" type="button">
-                            <FaExchangeAlt /> Switch
-                        </Button>
-                    </Col>
-                </Row>
-                <Row className="mt-5">
-                    <Col xxl={3} xl={3} lg={4}>
-                        <h2 className="text-uppercase mb30">Help Center</h2>
-                        <SideNavWithRoutingWidget menuData={menuItems} />
-                    </Col>
+       
+                   
                     <Col xxl={5} xl={4} lg={8} md={12} sm={12} xs={12}>
 
                         <section>
@@ -216,11 +163,6 @@ export default function FaqCustomers() {
                                 </Col>
                             </Row>
                         </section>
-                    </Col>
-                </Row>
-            </Container>
-            <Footer />
-        </section>
-
+                    </Col>    
     );
 }

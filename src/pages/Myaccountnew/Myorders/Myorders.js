@@ -10,9 +10,10 @@ import { BsCircleFill, BsInfoCircle } from "react-icons/bs";
 
 export default function Myorders() {
     return (
+        <Col  xxl={7} xl={7} lg={7} md={12} sm={12} xs={12} >
         <Container  className="my-orders-container">
-            <Row className="orders-desktop">                  
-                <Col >
+                           
+                
                     <h2 className="text-uppercase">My orders</h2>
                     <Row className="right-block">
                         <p><BsCircleFill className="circleGreen" /> <span className="text-grey">Dispacted</span> <span className="track-order">Track this order</span> </p>
@@ -56,8 +57,8 @@ export default function Myorders() {
                         </Col>
                     </Row>
                     {/* mobile my orders */}
-                </Col>
-            </Row>
+               
+            
             {/* <section className="orders-mobile">
             <h2 className="text-uppercase border-0">My orders</h2>
 
@@ -140,5 +141,6 @@ export default function Myorders() {
             </section> */}
 
         </Container>
+        </Col>
     )
 }

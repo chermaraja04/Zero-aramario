@@ -1,74 +1,12 @@
 import React, { useState } from "react";
 import "./AboutUs.scss";
-import { Col, Container, Row, Form, Button } from "react-bootstrap";
-import Accordion from 'react-bootstrap/Accordion';
-import { IoPlay } from "react-icons/io5";
-import Footer from "../../../components/footer/Footer";
-import { FaExchangeAlt } from "react-icons/fa";
-import SideNavWithRoutingWidget from "../../../widgets/sideNavWithRoutingWidget/sideNavWithRoutingWidget";
-
-
-
+import { Col, Button } from "react-bootstrap";
 
 
 export default function AboutUs() {
 
-    let menuItems = [
-        {
-            title: 'Our return / Exchange Form',
-            url: "/return-policy",
-            id: "1"
-        },
-        {
-            title: 'Refunds Form',
-            url: "/refund-form",
-            id: "2"
-        },
-        {
-            title: 'Track my order / return',
-            url: "/track-my-order",
-            id: "3"
-        },
-        {
-            title: 'Feedback',
-            url: "/feed-back",
-            id: "4"
-        },
-        {
-            title: 'FAQ - Customers',
-            url: "/faq-customers",
-            id: "5"
-        },
-        {
-            title: 'About us',
-            url: "/about-us",
-            id: "6"
-        },
-        {
-            title: 'Careers',
-            url: "/",
-            id: "7"
-        }
-    ]
-
     return (
-        <section>
-            <Container fluid="md | sm | xs" className="pt-5 return-policy-container">
-                <Row className="align-items-center">
-                    <Col>
-                        <p className="mb-0">Home <span className="fw-bold-x">/ Help Center</span></p>
-                    </Col>
-                    <Col className="text-center switch-block">
-                        <Button className="switch-btn" variant="primary" type="button">
-                            <FaExchangeAlt /> Switch
-                        </Button>
-                    </Col>
-                </Row>
-                <Row className="mt-5">
-                    <Col xxl={3} xl={3} lg={4}>
-                        <h2 className="text-uppercase mb30">Help Center</h2>
-                        <SideNavWithRoutingWidget menuData={menuItems} />
-                    </Col>
+                             
                     <Col xxl={6} xl={6} lg={8} md={12} sm={12} xs={12}>
                         <section>
                             <h4 className="fw-bold-x mb30">ABOUT US</h4>
@@ -88,11 +26,6 @@ export default function AboutUs() {
                                 Visit our company
                             </Button>
                         </div>
-                    </Col>
-                </Row>
-            </Container>
-            <Footer />
-        </section>
-
+                    </Col>      
     );
 }

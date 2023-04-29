@@ -22,6 +22,8 @@ import Filladdress from "./pages/Myaccountnew/Filladdress/Filladdress";
 import Checkout from "./pages/Myaccountnew/Checkout/Checkout";
 import PrivacyPolicy from "./pages/PrivacyPolicy/PrivacyPolicy";
 import PersonalAccount from "./pages/Myaccountnew/PersonalAccount/PersonalAccount";
+import HelpCenter from "./pages/HelpCenter/HelpCenter"
+
 function App() {
   return (
     <AuthProvider>
@@ -37,16 +39,12 @@ function App() {
         <Route path="/sign-up" element={<SignUp />} />     
         <Route path="/account-information" element={<PersonalAccount/>} />        
         <Route path="/terms-conditions" element={<TermsConditions/>} />
-        <Route path="/return-policy" element={<ReturnPolicy />}/>
-        <Route path="/refund-form" element={<RefundForm />}/>
-        <Route path="/track-my-order" element={<TrackMyOrder />}/>
-        <Route path="/feed-back" element={<FeedBack />}/>
-        <Route path="/faq-customers" element={<FaqCustomers />}/>
-        <Route path="/about-us" element={<AboutUs />}/>
+        <Route path="/return-policy" element={<ReturnPolicy />}/> 
         <Route path="/myorders-list" element={<Myorderslist />}/>
         <Route path="/fill-address" element={<Filladdress />}/>
         <Route path="/Checkout" element={<Checkout />}/>
         <Route path="/privacy-policy" element={<PrivacyPolicy />}/>
+        <Route path="/help-center" element={<HelpCenter />}/>        
              </Routes>
         </AuthProvider>
 
