@@ -1,10 +1,11 @@
-// import React from "react";
-import "./AccountInformation.scss";
-// import { Col, Container, Row } from "react-bootstrap";
-import { Col, Row, Form, Button, Container } from "react-bootstrap";
-import { FiEye } from "react-icons/fi";
 import { useDispatch } from "react-redux";
 import React, { useState } from "react";
+
+import "./AccountInformation.scss";
+import { Col, Row, Form, Button, Container } from "react-bootstrap";
+import { CreateNewAddress } from '../../../redux-tool/AccountRedux';
+import { Navigate } from "react-router-dom";
+
 
 
 export default function AccountInformation() {
@@ -15,21 +16,25 @@ export default function AccountInformation() {
         AddressTwo: "",
         City: "",
         State: "",
-        Postalcode: ""
+        Postalcode: "",
+        type:''
     })
-    const { addresOne, AddressTwo, City, State, Postalcode } = userRegister
+    const { addresOne, AddressTwo, City, State, Postalcode,type } = userRegister
     const onChange = (e) => {
         setUserRegister({ ...userRegister, [e.target.name]: e.target.value })
     }
     const sumbitForm = (e) => {
-        e.preventDefault()
-        // dispatch(UserRegister(userRegister));
+        e.preventDefault();
+        dispatch(CreateNewAddress(userRegister));
     }
 
-    const [currentStep, setCurrentStep] = useState('selectAddresses')
+    const [currentStep, setCurrentStep] = useState('');
+
+    const selectType = (value) =>{
+        setUserRegister({ ...userRegister, type: value })
+    }
     return (
         < >
-
             {currentStep === '' &&
                 <Col xxl={7} xl={7} lg={7} md={12} sm={12} xs={12}>
                     <h2>HELLO,</h2>
@@ -60,7 +65,7 @@ export default function AccountInformation() {
 
             }
             {currentStep === 'editAddress' &&
-                <Col xxl={7} xl={7} lg={7} md={12} sm={12} xs={12}>
+                <Col xxl={6} xl={5} lg={6} md={12} sm={12} xs={12}>
                     <h4 className="fw-bold-x mb30">Contact Information</h4>
                     <Form className="global-form-container ">
                         <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -134,14 +139,14 @@ export default function AccountInformation() {
                         <p className="fw-bold-x">Would you like to Label your address</p>
                         <Row className="w-75">
                             <Col>
-                                <div className="switch-btn">
-                                    <span>j</span>
+                                <div className="switch-btn" onClick={()=>{selectType('Home')}}>
+                                    <span></span>
                                     <span>Home</span>
                                 </div>
                             </Col>
                             <Col>
-                                <div className="switch-btn">
-                                    <span>j</span>
+                                <div className="switch-btn" onClick={()=>{selectType('Work')}}>
+                                    <span></span>
                                     <span>Work</span>
                                 </div>
                             </Col>
@@ -150,7 +155,10 @@ export default function AccountInformation() {
                         <Button
                             className="w-50 mt-5 btn btn-dark"
                             type="submit"
-                            onClick={(e) => sumbitForm(e)}
+                            onClick={(e) =>{
+                                sumbitForm(e);
+                               setCurrentStep('selectAddresses')
+                            } }
                         >
                             Save address
                         </Button>
@@ -189,7 +197,7 @@ export default function AccountInformation() {
                                 </Col>
                                 <Col lg={12} md={6} sm={6} xs={6}>
                                     <Button
-                                        className="mt-md-2 border-btn">
+                                        className="mt-lg-2 border-btn">
                                         Delete this address
                                     </Button>
                                 </Col>
@@ -225,7 +233,7 @@ export default function AccountInformation() {
                                 </Col>
                                 <Col lg={12} md={6} sm={6} xs={6}>
                                     <Button
-                                        className="mt-md-2 border-btn">
+                                        className="mt-lg-2 border-btn">
                                         Delete this address
                                     </Button>
                                 </Col>

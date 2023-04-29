@@ -42,9 +42,6 @@
     column-gap: 10px;
 }
 
-.first-column {
-    width: 1%;
-}
 
 .dashed-border {
     border: 3px dashed #707070;
@@ -79,9 +76,18 @@
     height: 35px;
 }
 
-// @media only screen and (min-width: 992px) {
-//     .shipping-container {
-//         width: 50%;
-//     }
+.first-column {
+    width: 1%;
+}
+.form-check-input:checked{
+    background-color: green;
+    border-color: green;
+}
 
-// }
+
+@media only screen and (max-width: 992px) {
+    .first-column {
+        width: 5%;
+    }
+
+}

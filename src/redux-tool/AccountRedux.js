@@ -21,20 +21,19 @@ const Account = createSlice({
 });
 
 
-export const {loading, cretedSuccess, CreatedFailed} = Account.actions;
+export const {loading} = Account.actions;
 
 
-export const postOrder = (subcategoryDatas) => {
+export const CreateNewAddress = (subcategoryDatas) => {
     console.log("userData",subcategoryDatas);
     return (dispatch) => {
-    //   dispatch(createSubcategory());
-  
+          dispatch(loading());  
       api.post('api/accountInfo', subcategoryDatas)
         .then((response) => {
-          dispatch(cretedSuccess(response.data));
+          // dispatch(cretedSuccess(response.data));
         })
         .catch((error) => {
-          dispatch(CreatedFailed(error.message));
+          // dispatch(CreatedFailed(error.message));
         });
     };
   };
@@ -47,10 +46,10 @@ export const postOrder = (subcategoryDatas) => {
   
       api.post('api/accountInfo', subcategoryDatas)
         .then((response) => {
-          dispatch(cretedSuccess(response.data));
+          // dispatch(cretedSuccess(response.data));
         })
         .catch((error) => {
-          dispatch(CreatedFailed(error.message));
+          // dispatch(CreatedFailed(error.message));
         });
     };
   };
@@ -63,10 +62,10 @@ export const postOrder = (subcategoryDatas) => {
   
       api.post('api/address', subcategoryDatas)
         .then((response) => {
-          dispatch(cretedSuccess(response.data));
+          // dispatch(cretedSuccess(response.data));
         })
         .catch((error) => {
-          dispatch(CreatedFailed(error.message));
+          // dispatch(CreatedFailed(error.message));
         });
     };
   };
@@ -79,10 +78,12 @@ export const postOrder = (subcategoryDatas) => {
   
       api.post('api/address', subcategoryDatas)
         .then((response) => {
-          dispatch(cretedSuccess(response.data));
+          // dispatch(cretedSuccess(response.data));
         })
         .catch((error) => {
-          dispatch(CreatedFailed(error.message));
+          // dispatch(CreatedFailed(error.message));
         });
     };
   };
+
+  export default Account.reducer;
