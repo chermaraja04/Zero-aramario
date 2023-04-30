@@ -3,34 +3,48 @@ import "./navbar.css";
 import { addKart } from "../redux-tool/Addtocartredux"
 import { useSelector, useDispatch } from "react-redux";
 
+import { Carousel, Card, Container, Row, Col, Button } from "react-bootstrap";
+
 function NavBar() {
-  
+
   const localValue = localStorage.getItem("localtoken");
-    const [localvalueStore, setLocalvalueStore] = useState(localValue)
+  const [localvalueStore, setLocalvalueStore] = useState(localValue)
 
 
-    const addToKart = useSelector(state => state.cartAdding.data)
-    console.log(addToKart,"cart after adding")
+  const addToKart = useSelector(state => state.cartAdding.data)
+  console.log(addToKart, "cart after adding")
 
 
-   const logOutButon = () =>{
+  const logOutButon = () => {
     localStorage.clear("TOKEN");
     window.location.href = "login"
   }
 
 
-  useEffect(()=>{
+  useEffect(() => {
     // console.log(addToKart,"oooooooooooooooo")
-  },[addToKart])
+  }, [addToKart])
+
+  const newArrivals= ['New in','women Holiday Edit',"women FormalWear Edit"];
+
+  const CoatAndJackets= ['All coats & jackets','Treanch Coats',"Jackets","Qulited Jackets","Coats","Puffer jackets"];
+
+  const clothing=['All cloth',"T-shirt","shirts & Tops" ,"skits"];
+
+  const Bags=['All Bags',"Mini Bags","ToteBags" ,"Shoulder bags"];
+
+
+  const Accessories =['All Accessories',"Berits","Socks","Umbrellas","Belts"];
+  const Scarves =['All Scarves',"Silk Scarves","LightWeight","Cashmere Scarves",]
   return (
     <Fragment>
       <div class="header fixed-tops ">
-        <div className="container">
+        <div className="" >
           <nav
             id="navbar"
-            class="navbar navbar-expand-md navbar-light navbar-color hover-change sticky"
+            class="navbar navbar-expand-md navbar-light navbar-color hover-change sticky nav-header"
           >
-            <div id="web-view" className="container-fluid" style={{padding: '0px'}}>
+            <div id="web-view" className="container-fluid" style={{ padding: '30px' }}>
               <a href="/">
                 <img
                   src="/assets/zeroarmario.png"
@@ -58,7 +72,7 @@ function NavBar() {
                     <img
                       className="s-left s-img-1"
                       src="/assets/images/svg/Search.svg"
-                      style={{ width: "15px" }}
+                      style={{ width: "15px"}}
                       alt="search"
                     />
                   </a>
@@ -78,7 +92,7 @@ function NavBar() {
                       id="navbarDropdownMenuLink"
                       dataToggle="dropdown"
                       ariaHaspopup="true"
-                      // ariaExpanded="false"
+                    // ariaExpanded="false"
                     >
                       <img
                         className="s-left s-img-2"
@@ -112,51 +126,205 @@ function NavBar() {
                 id="navbarResponsive"
               >
                 <ul
-                  className="navbar-nav mobile-nav"
+                  className="navbar-nav mobile-nav menu"
                   style={{
                     fontSize: "14px",
                     fontWeight: 500,
                     marginLeft: "20px",
                   }}
                 >
+                     <li className="nav-item dropdown has-megamenu dropdown1">
+                    <a className="alignment" dataToggle="dropdown">
+                    New arrivals
+                    </a>
+
+                    <div class="submenu">
+                     <Row className="w-100">
+                       <Col md={2}> 
+                       <p className="fw-bold-x mt-2">NEW ARRIVALS</p>
+                       {newArrivals.map((list)=>{
+                        return(
+                          <div className="mt-2">{list}</div>
+                        )
+                       })} 
+                       </Col>
+                       <Col md={2}>                        
+                       <p className="fw-bold-x mt-2">COAT & JACKETS</p>
+                       {CoatAndJackets.map((list)=>{
+                        return(
+                          <div className="mt-2">{list}</div>
+                        )
+                       })} 
+                       </Col>
+                       <Col md={2}> 
+                       <p className="fw-bold-x mt-2"> CLOTHING</p>
+                       {clothing.map((list)=>{
+                        return(
+                          <div className="mt-2">{list}</div>
+                        )
+                       })} 
+                       </Col>
+                       <Col md={2}> 
+                       <p className="fw-bold-x mt-2">BAGS</p>
+                       {Bags.map((list)=>{
+                        return(
+                          <div className="mt-2">{list}</div>
+                        )
+                       })} 
+                       </Col>
+                       <Col md={2}> 
+                       <p className="fw-bold-x mt-2">ACCESSORIES</p>
+                       {Accessories.map((list)=>{
+                        return(
+                          <div className="mt-2">{list}</div>
+                        )
+                       })} 
+                       </Col>
+                       <Col md={2}> 
+                       <p className="fw-bold-x mt-2">SCARVES</p>
+                       {Scarves.map((list)=>{
+                        return(
+                          <div className="mt-2">{list}</div>
+                        )
+                       })} 
+                       </Col>                       
+
+                     </Row>
+                    </div>
+
+                  </li>
                   <li className="nav-item dropdown has-megamenu dropdown1">
                     <a className="alignment" dataToggle="dropdown">
                       Women
                     </a>
+
+                    <div class="submenu">
+                     <Row className="w-100">
+                       <Col md={2}> 
+                       <p className="fw-bold-x mt-2">NEW ARRIVALS</p>
+                       {newArrivals.map((list)=>{
+                        return(
+                          <div className="mt-2">{list}</div>
+                        )
+                       })} 
+                       </Col>
+                       <Col md={2}>                        
+                       <p className="fw-bold-x mt-2">COAT & JACKETS</p>
+                       {CoatAndJackets.map((list)=>{
+                        return(
+                          <div className="mt-2">{list}</div>
+                        )
+                       })} 
+                       </Col>
+                       <Col md={2}> 
+                       <p className="fw-bold-x mt-2"> CLOTHING</p>
+                       {clothing.map((list)=>{
+                        return(
+                          <div className="mt-2">{list}</div>
+                        )
+                       })} 
+                       </Col>
+                       <Col md={2}> 
+                       <p className="fw-bold-x mt-2">BAGS</p>
+                       {Bags.map((list)=>{
+                        return(
+                          <div className="mt-2">{list}</div>
+                        )
+                       })} 
+                       </Col>
+                       <Col md={2}> 
+                       <p className="fw-bold-x mt-2">ACCESSORIES</p>
+                       {Accessories.map((list)=>{
+                        return(
+                          <div className="mt-2">{list}</div>
+                        )
+                       })} 
+                       </Col>
+                       <Col md={2}> 
+                       <p className="fw-bold-x mt-2">SCARVES</p>
+                       {Scarves.map((list)=>{
+                        return(
+                          <div className="mt-2">{list}</div>
+                        )
+                       })} 
+                       </Col>                       
+
+                     </Row>
+                    </div>
+
+                  </li>
+                  <li className="nav-item dropdown has-megamenu dropdown1">
                     <a className="alignment" dataToggle="dropdown">
                       Men
                     </a>
-                    <a className="alignment" dataToggle="dropdown">
-                      Children
-                    </a>
-                    <a className="alignment" dataToggle="dropdown">
-                      Home
-                    </a>
-                    <div className="dropdown-menu megamenu dropdown-menu1">
-                      <div className="custom-drop-down">
-                        <div className="row">
-                          <div className="col-2"></div>
-                          <div className="col-10 submenu">
-                            <div className="submenu-items">
-                              <p>New arrivals</p>
-                              <li>
-                                <a>New In</a>
-                              </li>
-                              <li>
-                                <a>On Sale</a>
-                              </li>
-                              <br />
-                            </div>
-                          </div>
-                        </div>
-                        <div className="row">
-                          <div className="col-1"></div>
 
-                          <div className="col-5"></div>
-                        </div>
-                      </div>
+                    <div class="submenu">
+                     <Row className="w-100">
+                       <Col md={2}> 
+                       <p className="fw-bold-x mt-2">NEW ARRIVALS</p>
+                       {newArrivals.map((list)=>{
+                        return(
+                          <div className="mt-2">{list}</div>
+                        )
+                       })} 
+                       </Col>
+                       <Col md={2}>                        
+                       <p className="fw-bold-x mt-2">COAT & JACKETS</p>
+                       {CoatAndJackets.map((list)=>{
+                        return(
+                          <div className="mt-2">{list}</div>
+                        )
+                       })} 
+                       </Col>
+                       <Col md={2}> 
+                       <p className="fw-bold-x mt-2"> CLOTHING</p>
+                       {clothing.map((list)=>{
+                        return(
+                          <div className="mt-2">{list}</div>
+                        )
+                       })} 
+                       </Col>
+                       <Col md={2}> 
+                       <p className="fw-bold-x mt-2">BAGS</p>
+                       {Bags.map((list)=>{
+                        return(
+                          <div className="mt-2">{list}</div>
+                        )
+                       })} 
+                       </Col>
+                       <Col md={2}> 
+                       <p className="fw-bold-x mt-2">ACCESSORIES</p>
+                       {Accessories.map((list)=>{
+                        return(
+                          <div className="mt-2">{list}</div>
+                        )
+                       })} 
+                       </Col>
+                       <Col md={2}> 
+                       <p className="fw-bold-x mt-2">SCARVES</p>
+                       {Scarves.map((list)=>{
+                        return(
+                          <div className="mt-2">{list}</div>
+                        )
+                       })} 
+                       </Col>                       
+
+                     </Row>
                     </div>
+
                   </li>
+               
+                  <li className="nav-item dropdown has-megamenu dropdown1">
+                    <a className="alignment" dataToggle="dropdown">
+                    home
+                    </a>
+
+                    <div class="submenu">
+                  hello
+                    </div>
+
+                  </li>
+
                 </ul>
 
                 <ul className="navbar-nav d-flex flex-row" id="forweb">
@@ -192,7 +360,7 @@ function NavBar() {
                     ></a>
                     <div
                       className="dropdown-menu dropdown-menu4"
-                      aria-labelledby="navbarDropdownMenuLink"                    
+                      aria-labelledby="navbarDropdownMenuLink"
                     >
                       <p
                         style={{
@@ -223,19 +391,19 @@ function NavBar() {
                         routerLink="myaccount/"
                         onClick={() => logOutButon()}
                       >
-                      Logout
+                        Logout
                       </p> :
-                      <p
-                      style={{
-                        fontWeight: 100,
-                        fontWize: "14px",
-                        cursor: "pointer",
-                      }}
-                      routerLink="/login"
-                      onClick={() => logOutButon()}
-                    >
-                    Login
-                    </p>
+                        <p
+                          style={{
+                            fontWeight: 100,
+                            fontWize: "14px",
+                            cursor: "pointer",
+                          }}
+                          routerLink="/login"
+                          onClick={() => logOutButon()}
+                        >
+                          Login
+                        </p>
                       }
                     </div>
                   </li>
@@ -300,33 +468,33 @@ function NavBar() {
                     </div>
                   </li> */}
 
-                  <li className="nav-item dropdown dropdown5 checkout-item" 
-                  style={{ cursor: "pointer" }}>
+                  <li className="nav-item dropdown dropdown5 checkout-item"
+                    style={{ cursor: "pointer" }}>
                     <div>
                       <div className="checkout-cart" routerLink="checkout/">
                         <p id="cart-count">{addToKart}</p>
                       </div>
                       <div
-                      className="dropdown-menu dropdown-menu4"
-                      aria-labelledby="navbarDropdownMenuLink"                    
-                    >
-                      <p
-                        style={{
-                          fontWeight: 100,
-                          fontWize: "14px",
-                          cursor: "pointer",
-                        }}
-                        routerLink="wishlist/"
+                        className="dropdown-menu dropdown-menu4"
+                        aria-labelledby="navbarDropdownMenuLink"
                       >
-                        {/* Wishlist */}
-                      </p>
-                    </div>
+                        <p
+                          style={{
+                            fontWeight: 100,
+                            fontWize: "14px",
+                            cursor: "pointer",
+                          }}
+                          routerLink="wishlist/"
+                        >
+                          {/* Wishlist */}
+                        </p>
+                      </div>
                     </div>
                   </li>
                   <li className="checkout-item" style={{ cursor: "pointer" }}>
-                  <div className="input-cont formGroup d-flex align-items-center justify-content-center">
-              </div>
-              </li>
+                    <div className="input-cont formGroup d-flex align-items-center justify-content-center">
+                    </div>
+                  </li>
                 </ul>
               </div>
             </div>
