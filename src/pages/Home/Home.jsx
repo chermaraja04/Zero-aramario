@@ -11,7 +11,7 @@ import Footer from "../../components/footer/Footer";
 import { useSelector, useDispatch } from "react-redux";
 import { loginSuccess } from "../../redux-tool/LoginRedux";
 import { createcategorySuccess } from "../../redux-tool/CategoryRedux";
-import Header from  "../../components/Header";
+// import Header from  "../../components/Header";
 
 import CategoryAdd from "../Category/Category";
 import SubCatogory from "../SubCategory/SubCategory";
